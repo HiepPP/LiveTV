@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lint>
+    <issue id="ViewHolder">
+        <ignore path="src/com/tvonline/ActivityTV.java" />
+        <ignore path="src/com/tvonline/CustomAdapter1.java" />
+        <ignore path="src/com/tvonline/RadioActivity.java" />
+    </issue>
+</lint>

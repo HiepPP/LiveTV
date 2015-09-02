@@ -1,0 +1,14 @@
+package com.tvonline;
+
+import android.content.Context;
+import android.widget.ArrayAdapter;
+
+public class CustomAdapter1 extends ArrayAdapter<String> {
+
+	public CustomAdapter1(Context context, int resource) {
+		super(context, resource);
+		// TODO Auto-generated constructor stub
+	}
+
+
+}

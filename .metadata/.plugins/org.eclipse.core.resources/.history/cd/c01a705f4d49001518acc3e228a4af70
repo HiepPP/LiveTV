@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TV Online</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    <string name="member">
+        asdasd /n
+        asdasd /n
+        asasd /m
+    </string>
+
+    <string-array name="station_names">
+        <item>BRV</item>
+        <item>ATV1</item>
+        <item>Phu Yen</item>
+        <item>VTV Cần Thơ 1</item>
+        <item>VTV Cần Thơ 2</item>
+        <item>TTXVN</item>
+        <item>BinhPhuocTV 2</item>
+        <item>HaiPhongTV</item>
+        <item>NCT</item>
+        <item>Chanel33</item>
+
+    </string-array>
+    <string-array name="station_urls">
+        <item>rtmp://113.163.216.24/live/livestream</item> 
+        <item>rtmp://113.161.212.25/live//atv1</item> 
+        <item>rtmp://113.161.4.102/live//vtvphuyen.tv</item>
+        <item>rtmp://113.161.204.167/livepkgr/livestream</item>
+        <item>rtmp://113.161.204.168/livepkgr/livestream1</item>
+        <item>rtmp://live.vnanet.vn/Live//DRC</item>
+        <item>rtmp://113.161.180.136/live//thbp2.tv</item>
+        <item>rtmp://203.162.238.46/live//livestream</item>
+        <item>rtmp://123.30.134.108/live/nctlive</item>
+        <item>rtmp://77.120.17.186:1935/33chanel/live</item>
+    </string-array>
+    <string-array name="radio_names">
+        <item>VOV1</item>
+        <item>VOV2</item>
+        <item>VOV3</item>
+        <item>VOV5</item>
+        <item>VOVGT Hanoi</item>
+        <item>VOVGT HCM</item>
+        <item>VOVTV</item>
+    </string-array>
+    <string-array name="radio_urls">
+        <item>rtmp://210.245.60.242:1935/vov1/vov1</item>
+        <item>rtmp://210.245.60.242:1935/vov2/vov2</item>
+        <item>rtmp://210.245.60.242:1935/vov3/vov3</item>
+        <item>rtmp://210.245.60.242:1935/vov5/vov5</item>
+        <item>rtmp://113.191.248.167:1935/live/vovgthn</item>
+        <item>rtmp://210.245.60.242:1935/vovgtsg/vovgtsg</item>
+        <item>rtmp://210.245.60.242:1935/vovtv/vovtv</item>
+    </string-array>
+
+</resources>

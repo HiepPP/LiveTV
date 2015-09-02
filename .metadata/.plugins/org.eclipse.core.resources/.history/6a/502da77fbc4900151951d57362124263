@@ -1,0 +1,142 @@
+package com.tvonline;
+
+import java.util.ArrayList;
+import java.util.ResourceBundle.Control;
+
+import android.content.Context;
+import android.content.Intent;
+import android.content.res.Resources;
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.ListView;
+import android.widget.TextView;
+
+public class ActivityTV extends android.support.v4.app.Fragment implements
+		OnItemClickListener {
+	String[] ds;
+	// ArrayAdapter<String> adapter = null;
+	CustomAdapter adapter = null;
+	ListView list;
+	public LayoutInflater inflater;
+
+	@Override
+	public View onCreateView(LayoutInflater inflater,
+			@Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		View v = inflater.inflate(R.layout.tv, container, false);
+		this.inflater = inflater;
+//		ds = getResources().getStringArray(R.array.station_names);
+		/*
+		 * adapter = new ArrayAdapter<String>(getActivity().getBaseContext(),
+		 * android.R.layout.simple_list_item_1, ds);
+		 */
+		adapter = new CustomAdapter(getActivity(), ds);
+		list = (ListView) v.findViewById(R.id.listkenh);
+		list.setAdapter(new CustomAdapter1(getActivity().getBaseContext()));
+		list.setOnItemClickListener(this);
+		return v;
+	}
+
+	@Override
+	public void onItemClick(AdapterView<?> parent, View v, int pos, long id) {
+		// Toast.makeText(getActivity().getBaseContext(), "test",
+		// Toast.LENGTH_LONG).show();
+		// khai bao url
+		String url = getResources().getStringArray(R.array.station_urls)[pos];
+		Intent intent = new Intent(getActivity().getBaseContext(),
+				StreamTV.class);
+		intent.putExtra("url", url);
+		startActivity(intent);
+	}
+/*
+	class singlerow {
+		String ds;
+		int image;
+		singlerow(String ds, int image)
+		{
+			this.ds =ds;
+			this.image = image;
+		}
+	}
+	class badapter extends BaseAdapter{
+		ArrayList<singlerow> list;
+		Context context;
+		badapter(Context c){
+			context = c;
+			list = new ArrayList<singlerow>();
+			Resources res = c.getResources();
+			String[] ds = res.getStringArray(R.array.station_names);
+			int[] image = { R.drawable.kenh_1, R.drawable.kenh_2,
+					R.drawable.kenh_3, R.drawable.kenh_4, R.drawable.kenh_5,
+					R.drawable.kenh_6, R.drawable.kenh_7, R.drawable.kenh_8,
+					R.drawable.kenh_9, R.drawable.kenh_10};
+			for(int i =0; i<10; i++)
+			{
+				list.add(new singlerow(ds[i], image[i]));
+			}
+		}
+		@Override
+		public int getCount() {
+			// TODO Auto-generated method stub
+			return list.size();
+		}
+
+		@Override
+		public Object getItem(int i) {
+			// TODO Auto-generated method stub
+			return list.get(i);
+		}
+
+		@Override
+		public long getItemId(int i) {
+			// TODO Auto-generated method stub
+			return i;
+		}
+
+		@Override
+		public View getView(int i, View view, ViewGroup viewGroup) {
+			LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+			View row = inflater.inflate(R.layout.my_list, viewGroup,false);
+			
+			TextView title = (TextView) row.findViewById(R.id.title);
+			ImageView image = (ImageView) row.findViewById(R.id.image);
+			singlerow temp =  list.get(i);
+			title.setText(temp.ds);
+			//image.setImageResource(temp.image);
+			return row;
+		}
+		
+	}*/
+	/*
+	 * public static class StationListLoader extends
+	 * AsyncTaskLoader<List<Integer>> { private List<Integer> stationsImage;
+	 * Context context;
+	 * 
+	 * public StationListLoader(Context context) { super(context); this.context
+	 * = context; }
+	 * 
+	 * @Override public List<Integer> loadInBackground() { List<Integer>
+	 * stationImage = new ArrayList<Integer>(); Resources rs =
+	 * context.getResources(); for (int i = 1; i <=
+	 * rs.getStringArray(R.array.station_names).length; i++) { int resID =
+	 * rs.getIdentifier("kenh_" + i, "drawable", context.getPackageName()); if
+	 * (resID <= 0) resID = rs.getIdentifier("station_default", "drawable",
+	 * context.getPackageName()); stationImage.add(resID); }
+	 * 
+	 * return stationImage; }
+	 * 
+	 * @Override public void deliverResult(List<Integer> images) { if
+	 * (isReset()) { } stationsImage = images; if (isStarted()) {
+	 * super.deliverResult(images); } }
+	 * 
+	 * @Override protected void onStartLoading() { if (stationsImage != null) {
+	 * deliverResult(stationsImage); } forceLoad(); // *********** important } }
+	 */
+}

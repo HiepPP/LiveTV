@@ -1,0 +1,56 @@
+package com.tvonline;
+
+import java.util.zip.Inflater;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+
+public class singlerow{
+	String ds;
+	int image;
+}
+public class CustomAdapter1 extends BaseAdapter {
+	Context context;
+	LayoutInflater inflate;
+	String[] ds;
+	int[] hinhkenh = new int[] { R.drawable.kenh_1, R.drawable.kenh_2,
+			R.drawable.kenh_3, R.drawable.kenh_4, R.drawable.kenh_5,
+			R.drawable.kenh_6, R.drawable.kenh_7, R.drawable.kenh_8,
+			R.drawable.kenh_9, R.drawable.kenh_10 };
+	public CustomAdapter1(Context context, String[]ds){
+		this.context = context;
+		this.ds = ds;
+		inflate = LayoutInflater.from(this.context);
+	}
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return ds.length;
+	}
+
+	@Override
+	public Object getItem(int post) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public long getItemId(int post) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public View getView(int post, View v, ViewGroup parent) {
+		View row = v;
+		if(row == null)
+		{
+			row = inflate.inflate(R.layout.my_list,  parent, false);
+		}
+		return null;
+	}
+
+}

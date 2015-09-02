@@ -1,0 +1,70 @@
+package com.tvonline;
+
+import java.util.ArrayList;
+import android.content.Context;
+import android.content.res.Resources;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+class singlerow{
+	String ds;
+	int images;
+	singlerow(String ds, int image)
+	{
+		this.ds =ds;
+		this.images = image;
+	}
+}
+public class CustomAdapter1 extends BaseAdapter{
+	ArrayList<singlerow> list;
+	Context context;
+	CustomAdapter1(Context c){
+		context = c;
+		list = new ArrayList<singlerow>();
+		Resources res = c.getResources();
+		String[] ds = res.getStringArray(R.array.station_names);
+		int[] images = { R.drawable.kenh_1, R.drawable.kenh_2,
+				R.drawable.kenh_3, R.drawable.kenh_4, R.drawable.kenh_5,
+				R.drawable.kenh_6, R.drawable.kenh_7, R.drawable.kenh_8,
+				R.drawable.kenh_9, R.drawable.kenh_10};
+		for(int i =0; i<10; i++)
+		{
+			list.add(new singlerow(ds[i], images[i]));
+		}
+	}
+	@Override
+	public int getCount() {
+		// TODO Auto-generated method stub
+		return list.size();
+	}
+
+	@Override
+	public Object getItem(int i) {
+		// TODO Auto-generated method stub
+		return list.get(i);
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	@Override
+	public View getView(int i, View view, ViewGroup viewGroup) {
+		LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
+		View row = inflater.inflate(R.layout.my_list, viewGroup,false);
+		
+		TextView title = (TextView) row.findViewById(R.id.title);
+		ImageView image = (ImageView) row.findViewById(R.id.image);
+		singlerow temp =  list.get(i);
+		title.setText(temp.ds);
+		image.setImageResource(temp.images);
+		return row;
+	}
+	
+}

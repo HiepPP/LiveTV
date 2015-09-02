@@ -1,0 +1,7 @@
+INDEX VERSION 1.126+E:\Live TV\.metadata\.plugins\org.eclipse.jdt.core
+1284074322.index
+2898067457.index
+3565646012.index
+604306000.index
+4198351870.index
+2209476945.index

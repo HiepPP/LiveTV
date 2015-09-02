@@ -1,0 +1,24 @@
+package com.tvonline;
+
+import android.os.Bundle;
+import android.support.annotation.Nullable;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.webkit.WebView.FindListener;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+
+public class RadioActivity extends android.support.v4.app.Fragment{
+	String[] ds;
+	ArrayAdapter<String> adapter;
+	ListView list;
+	@Override
+	public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		View v =inflater.inflate(R.layout.radio,container,false);
+		list = (ListView) v.findViewById(R.id.listkenh);
+        return v;
+	}
+
+}

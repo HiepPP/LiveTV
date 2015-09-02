@@ -1,0 +1,7 @@
+package com.tvonline;
+
+import android.widget.ArrayAdapter;
+
+public class CustomAdapter1 extends ArrayAdapter<String> {
+
+}

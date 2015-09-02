@@ -1,0 +1,72 @@
+package com.tvonline;
+
+import io.vov.vitamio.LibsChecker;
+import io.vov.vitamio.MediaPlayer;
+import io.vov.vitamio.MediaPlayer.OnCompletionListener;
+import io.vov.vitamio.MediaPlayer.OnPreparedListener;
+import io.vov.vitamio.widget.MediaController;
+import io.vov.vitamio.widget.VideoView;
+import android.app.Activity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+
+
+public class StreamTV extends Activity{
+//	ProgressBar loading;
+	VideoView stream;
+//	TextView loikenh;
+	String urlkenh;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		if (!LibsChecker.checkVitamioLibs(this))
+			return;
+		setContentView(R.layout.stream_tv);
+		urlkenh = getIntent().getStringExtra("url");
+		getwidget();
+		
+	}
+
+	public void getwidget() {
+		stream = (VideoView) findViewById(R.id.trinhchieu);
+		stream.setVideoPath(urlkenh);
+/*		loading = (ProgressBar) findViewById(R.id.load);
+		loikenh = (TextView) findViewById(R.id.loi);*/
+		stream.setMediaController(new MediaController(this));
+		stream.requestFocus();
+		stream.setOnPreparedListener(new io.vov.vitamio.MediaPlayer.OnPreparedListener() {
+			
+			@Override
+			public void onPrepared(MediaPlayer mediaPlayer) {
+				mediaPlayer.start();
+			}
+		});
+	}
+	/*private void loading(){
+		loading.setVisibility(View.VISIBLE);
+	}
+
+	private void loadComplete(MediaPlayer arg0) {
+		loading.setVisibility(View.GONE);
+		stream.start();
+		stream.resume();
+	}
+	@Override
+	public void onCompletion(MediaPlayer arg0) {
+		loading.setVisibility(View.GONE);
+		stream.start();
+		stream.resume();
+		
+	}
+
+	@Override
+	public void onPrepared(MediaPlayer arg0) {
+		// TODO Auto-generated method stub
+		loadComplete(arg0);
+		
+	}*/
+}

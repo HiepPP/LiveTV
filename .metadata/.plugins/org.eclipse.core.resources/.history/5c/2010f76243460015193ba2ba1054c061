@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">TV Online</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+
+    <string-array name="station_names">
+        <item>Al Jazeera English</item>
+        <item>BRV</item>
+        <item>ATV1</item>
+        <item>Phu Yen</item>
+
+    </string-array>
+    <string-array name="station_urls">
+        <item>rtmp://aljazeeraflashlivefs.fplive.net/aljazeeraflashlive-live?videoId=883816736001&amp;pubId=665003303001&amp;playerId=751182905001&amp;affiliateId=/aljazeera_eng_med?videoId=883816736001&amp;pubId=665003303001&amp;playerId=751182905001&amp;affiliateId=</item>
+        <item>rtmp://113.163.216.24/live/livestream</item> 
+        <item>rtmp://113.161.212.25/live//atv1</item> 
+        <item>rtmp://113.161.4.102/live//vtvphuyen.tv</item>
+    </string-array>
+    <string-array name="radio_names">
+        <item>VOV1</item>
+        <item>VOV2</item>
+        <item>VOV3</item>
+        <item>VOV5</item>
+        <item>VOVGT Hanoi</item>
+        <item>VOVGT HCM</item>
+        <item>VOVTV</item>
+    </string-array>
+    <string-array name="radio_urls">
+        <item>rtmp://210.245.60.242:1935/vov1/vov1</item>
+        <item>rtmp://210.245.60.242:1935/vov2/vov2</item>
+        <item>rtmp://210.245.60.242:1935/vov3/vov3</item>
+        <item>rtmp://210.245.60.242:1935/vov5/vov5</item>
+        <item>rtmp://113.191.248.167:1935/live/vovgthn</item>
+        <item>rtmp://210.245.60.242:1935/vovgtsg/vovgtsg</item>
+        <item>rtmp://210.245.60.242:1935/vovtv/vovtv</item>
+    </string-array>
+
+</resources>

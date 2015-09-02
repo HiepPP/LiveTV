@@ -1,0 +1,25 @@
+package com.tvonline;
+
+import io.vov.vitamio.LibsChecker;
+import android.app.Activity;
+import android.os.Bundle;
+import android.widget.ProgressBar;
+import android.widget.TextView;
+import android.widget.VideoView;
+
+public class StreamTV extends Activity{
+	ProgressBar loading;
+	VideoView stream;
+	TextView loikenh;
+	String urlkenh;
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		// TODO Auto-generated method stub
+		super.onCreate(savedInstanceState);
+		 if (!LibsChecker.checkVitamioLibs(this))
+	            return;
+		setContentView(R.layout.stream_tv);
+	}
+	
+}

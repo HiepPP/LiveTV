@@ -1,0 +1,82 @@
+package com.tvonline;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.ArrayAdapter;
+import android.widget.BaseAdapter;
+import android.widget.ImageView;
+import android.widget.TextView;
+
+public class CustomAdapter extends BaseAdapter{
+	private List<Integer> list;
+	private String[] stationName;
+	String[] ds;
+	int[] hinhkenh = new int[]{
+			R.drawable.kenh_1,
+			R.drawable.kenh_2,
+			R.drawable.kenh_3,
+			R.drawable.kenh_4,
+			R.drawable.kenh_5,
+			R.drawable.kenh_6,
+			R.drawable.kenh_7,
+			R.drawable.kenh_8,
+			R.drawable.kenh_9,
+			R.drawable.kenh_10
+	};
+
+
+	public CustomAdapter(Context context, String[] ds) {
+		this.ds = ds;
+	}
+
+	@Override
+	public int getCount() {
+		if (list == null)
+			return 0;
+		return list.size();
+	}
+
+	@Override
+	public Object getItem(int arg0) {
+		return list.get(arg0);
+	}
+
+	@Override
+	public long getItemId(int arg0) {
+		return arg0;
+	}
+
+	@Override
+	public View getView(int position, View convertView, ViewGroup parent) {
+		if (convertView == null) {
+			LayoutInflater inflater = LayoutInflater.from(parent.getContext());
+			convertView = inflater.inflate(R.layout.my_list, parent,
+					false);
+		}
+
+		Integer data = list.get(position);
+
+		TextView nameView = (TextView) convertView.findViewById(R.id.title);
+		nameView.setText(stationName[position]);
+		ImageView hinhkenh = (ImageView) convertView.findViewById(R.id.image);
+		hinhkenh.setImageResource(data);
+		return convertView;
+	}
+
+	public int getImageResource(int position) {
+		return list.get(position);
+	}
+
+	public String getStationName(int position) {
+		return stationName[position];
+	}
+
+	public void setData(List<Integer> data) {
+		list = data;
+	}
+}
